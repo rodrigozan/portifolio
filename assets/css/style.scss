@@ -91,18 +91,51 @@ footer {
 
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+// .container {
+//     width: 90%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 20px;
+// }
 
 .card {
     padding: 5rem;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
 }
+
+/* Grid */
+
+// Container
+.container {
+    width: 100%;
+    max-width: 1200px; // Largura máxima do container
+    margin: 0 auto; // Centraliza o container
+    padding: 0 15px; // Padding para algum espaço interno
+    display: flex;
+    flex-wrap: wrap; // Permite que as colunas se ajustem em várias linhas
+}
+
+// Colunas
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 calc(100% / 12 * #{$i}); // Calcula a largura da coluna
+        max-width: calc(100% / 12 * #{$i}); // Define a largura máxima
+        box-sizing: border-box; // Inclui padding e border na largura da coluna
+        padding: 0 15px; // Padding para espaçamento entre colunas
+    }
+}
+
+// Exemplo de classes para responsividade
+@media screen and (max-width: 768px) {
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            flex: 0 0 calc(100% / 12 * #{$i});
+            max-width: calc(100% / 12 * #{$i});
+        }
+    }
+}
+
 
 
 /* Links */
