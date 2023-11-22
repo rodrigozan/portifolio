@@ -18,7 +18,6 @@ $tertiary-color: #454545;
 
     li {
         display: inline-block;
-
         margin: 0 10px;
     }
 }
@@ -89,10 +88,7 @@ section,
 footer {
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
 }
 
 .container {
@@ -100,6 +96,12 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.card {
+    padding: 5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
 }
 
 
@@ -112,15 +114,6 @@ a {
 /* Lists */
 nav {
     ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        align-items: center;
-
-        .list-item {
-            margin: 0 10px;
-        }
-
         @include horizontal-list;
     }
 }
@@ -150,81 +143,55 @@ nav {
     opacity: 1;
 }
 
-
-
 // Header
-header {
-    background: transparent;
-    position: relative;
-    overflow: hidden;
+
+.header-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center; 
+    background-image: url('../img/background_2.jpg');
+    background-size: cover; // Garante que a imagem cubra todo o espaço disponível
+    background-position: center; // Centraliza a imagem
+    background-repeat: no-repeat; // Evita a repetição da imagem
 
-    .header-video {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
+    h1 {
+        margin-bottom: 10px;
     }
 
-    .header-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
+    .ul-social {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row; // Mantém os itens da lista em linha
+        justify-content: center; // Centraliza a lista
 
-        .call-to-action {
-            h1 {
-                margin-bottom: 10px;
-            }
-
-            .nav-social {
-                .ul-social {
-                    display: flex;
-                    justify-content: center;
-
-                    .social-item {
-                        animation: pulse 2s infinite !important;
-
-                        &:hover {
-                            color: $primary-color;
-                        }
-                    }
-                }
-            }
-        }
-
-
-
-
-        .arrow-down {
-            font-size: 2rem;
-            margin-top: 3rem;
-            color: $primary-color;
+        .social-item {
             animation: pulse 2s infinite !important;
+
+            &:hover {
+                color: $primary-color;
+            }
         }
+    }
+
+    .arrow-down {
+        font-size: 2rem;
+        margin-top: 3rem;
+        color: $primary-color;
+        animation: pulse 2s infinite !important;
     }
 }
+
+
 
 
 // Seções
 #about,
 #projects {
-    // Estilos das seções
+   padding-top: 5rem;
 }
 
 #about {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
 
     .number-container {
         display: flex;
@@ -250,28 +217,10 @@ header {
         }
     }
 
-    .skills-container h2,
-    .skills-container .slogan {
-        color: $primary-color;
-        /* Cor primária */
-    }
-
-    .skill-title {
-        color: $primary-color;
-    }
-
-    .skill-description {
-        color: #333;
-    }
-
-    .large-skills-text {
-        font-size: 15em;
-        opacity: 0.8;
-        position: absolute;
-        right: 30%;
-        top: 50%;
-        transform: rotate(-45deg);
-        color: rgba(0, 0, 0, 0.1);
+    .skills-container {
+        h2, .slogan {
+            color: $primary-color;
+        }
     }
 
 }

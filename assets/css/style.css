@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -59,10 +58,6 @@ section,
 footer {
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .container {
@@ -70,6 +65,12 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.card {
+  padding: 5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
 }
 
 /* Links */
@@ -80,18 +81,11 @@ a {
 
 /* Lists */
 nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   align-items: center;
-}
-nav ul .list-item {
-  margin: 0 10px;
 }
 nav ul li {
   display: inline-block;
@@ -116,58 +110,43 @@ nav ul li {
   opacity: 1;
 }
 
-header {
-  background: transparent;
-  position: relative;
-  overflow: hidden;
+.header-content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  background-image: url("../img/background_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-header .header-video {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-header .header-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .header-content .call-to-action h1 {
+.header-content h1 {
   margin-bottom: 10px;
 }
-header .header-content .call-to-action .nav-social .ul-social {
+.header-content .ul-social {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
-header .header-content .call-to-action .nav-social .ul-social .social-item {
+.header-content .ul-social .social-item {
   animation: pulse 2s infinite !important;
 }
-header .header-content .call-to-action .nav-social .ul-social .social-item:hover {
+.header-content .ul-social .social-item:hover {
   color: #8b0882;
 }
-header .header-content .arrow-down {
+.header-content .arrow-down {
   font-size: 2rem;
   margin-top: 3rem;
   color: #8b0882;
   animation: pulse 2s infinite !important;
 }
 
-#about {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+#about,
+#projects {
+  padding-top: 5rem;
 }
+
 #about .number-container {
   display: flex;
   align-items: center;
@@ -189,25 +168,8 @@ header .header-content .arrow-down {
   margin: 0;
   text-align: left;
 }
-#about .skills-container h2,
-#about .skills-container .slogan {
+#about .skills-container h2, #about .skills-container .slogan {
   color: #8b0882;
-  /* Cor primária */
-}
-#about .skill-title {
-  color: #8b0882;
-}
-#about .skill-description {
-  color: #333;
-}
-#about .large-skills-text {
-  font-size: 15em;
-  opacity: 0.8;
-  position: absolute;
-  right: 30%;
-  top: 50%;
-  transform: rotate(-45deg);
-  color: rgba(0, 0, 0, 0.1);
 }
 
 footer {

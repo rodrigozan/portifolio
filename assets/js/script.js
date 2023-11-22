@@ -1,22 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const headerTitle = document.querySelector('.header-content h1');
-    headerTitle.style.opacity = 0;
-    headerTitle.style.transform = 'translateX(-50px)'; // Começa 50px à esquerda
+    const header_title = document.querySelector('.header-content h1');
+    header_title.style.opacity = 0;
+    header_title.style.transform = 'translateX(-50px)'; // Começa 50px à esquerda
     
     setTimeout(() => {
-        headerTitle.style.opacity = 1;
-        headerTitle.style.transform = 'translateX(0)'; // Move para a posição original
-        headerTitle.style.transition = 'opacity 2s, transform 2s'; // Anima ambas as propriedades
+        header_title.style.opacity = 1;
+        header_title.style.transform = 'translateX(0)'; // Move para a posição original
+        header_title.style.transition = 'opacity 2s, transform 2s'; // Anima ambas as propriedades
     }, 500);
 
-    const headerSlogan = document.querySelector('.header-content p');
-    const text = 'Full Stack Developer | UI/UX Designer';
+    const header_slogan = document.querySelector('.header-content p');
+    const text = "I'm a full stack developer, UI/UX designer and prompt engineer";
     let index = 0;
 
     function typeWriter() {
         if (index < text.length) {
-            headerSlogan.innerHTML += text.charAt(index);
+            header_slogan.innerHTML += text.charAt(index);
             index++;
             setTimeout(typeWriter, 100); // Ajuste a velocidade conforme necessário
         }
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     typeWriter();
 
-    const nav_social = document.querySelector('.header-content .call-to-action .nav-social .ul-social');
-    nav_social.style.opacity = 0;
+    const header_content = document.querySelector('.header-content');
+    header_content.style.opacity = 0;
     setTimeout(() => {
-        nav_social.style.opacity = 1;
-        nav_social.style.transition = 'opacity 2s';
+        header_content.style.opacity = 1;
+        header_content.style.transition = 'opacity 2s';
     }, 500);
 
     const socialIcons = document.querySelectorAll('.social-item a');
